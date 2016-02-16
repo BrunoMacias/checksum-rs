@@ -3,4 +3,6 @@ name = "checksum"
 version = "0.1.0"
 authors = ["Bruno Macias <brunoemacias@gmail.com>"]
 
-[dependencies]
+[[bin]]
+name = "checksum"
+path = "examples/checksum.rs"
