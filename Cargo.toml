@@ -2,6 +2,11 @@
 name = "checksum"
 version = "0.1.0"
 authors = ["Bruno Macias <brunoemacias@gmail.com>"]
+repository = "https://github.com/BrunoMacias/checksum-rs.git"
+description = "Calculates crc32/crc64 file checksums written in Rust"
+keywords = ["crc", "crc32", "crc64", "file", "checksum"]
+readme = "README.md"
+license = "MIT"
 
 [[bin]]
 name = "checksum"
