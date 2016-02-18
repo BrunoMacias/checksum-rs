@@ -51,9 +51,11 @@ impl Crc {
                 return res;
             }
         } {}
+        c32.finalize();
+        c64.finalize();
 
-        self.checksum.crc32 = c32.finalize();
-        self.checksum.crc64 = c64.finalize();
+        self.checksum.crc32 = c32.getsum();
+        self.checksum.crc64 = c64.getsum();
         let res: Result<&Checksum, &str> = Ok(&self.checksum);
         return res;
     }
@@ -62,4 +64,26 @@ impl Crc {
         println!("{:X}", self.checksum.crc32);
         println!("{:X}", self.checksum.crc64);
     }
+
+    pub fn getsums(&self) -> &Checksum {
+        &self.checksum
+    }
+}
+
+#[test]
+fn crc_test() {
+    use std::fs::File;
+    use std::fs;
+
+    let file = File::create("foo.txt").unwrap();
+    file.set_len(1572864).unwrap();
+
+    let mut crc = Crc::new("foo.txt");
+    crc.checksum().unwrap();
+    let sums: &Checksum = crc.getsums();
+
+    fs::remove_file("foo.txt").unwrap();
+
+    assert_eq!(sums.crc32,0xAC2C5EE1);
+    assert_eq!(sums.crc64,0xD39C35166B57EF79);
 }
