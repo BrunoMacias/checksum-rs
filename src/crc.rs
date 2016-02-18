@@ -51,9 +51,11 @@ impl Crc {
                 return res;
             }
         } {}
+        c32.finalize();
+        c64.finalize();
 
-        self.checksum.crc32 = c32.finalize();
-        self.checksum.crc64 = c64.finalize();
+        self.checksum.crc32 = c32.getsum();
+        self.checksum.crc64 = c64.getsum();
         let res: Result<&Checksum, &str> = Ok(&self.checksum);
         return res;
     }
