@@ -33,7 +33,6 @@ impl Crc64 {
 
     pub fn reset(&mut self) {
         self.value = 0xffffffffffffffff;
-        self.value = 0;
     }
 
     pub fn update(&mut self, buf: &[u8]) {
@@ -67,5 +66,5 @@ impl Crc64 {
 fn crc32_test() {
     let mut crc64 = Crc64::new();
     crc64.checksum(b"0000");
-    assert_eq!(crc64.getsum(),0x2006FFA09D5A94F2);
+    assert_eq!(crc64.getsum(),0x2B5C866A7CBEF446);
 }
