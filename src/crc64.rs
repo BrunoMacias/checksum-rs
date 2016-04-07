@@ -33,6 +33,7 @@ impl Crc64 {
 
     pub fn reset(&mut self) {
         self.value = 0xffffffffffffffff;
+        self.count = 0;
     }
 
     pub fn update(&mut self, buf: &[u8]) {
