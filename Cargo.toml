@@ -1,6 +1,6 @@
 [package]
 name = "checksum"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Bruno Macias <brunoemacias@gmail.com>"]
 repository = "https://github.com/BrunoMacias/checksum-rs.git"
 description = "Calculates crc32/crc64 file checksums written in Rust"
