@@ -1,4 +1,4 @@
-# checksum-rs
+# checksum-rs [![Build Status](https://travis-ci.org/BrunoMacias/checksum-rs.svg?branch=master)](https://travis-ci.org/BrunoMacias/checksum-rs)
 Calculates CRC32/CRC64 file checksums written in Rust. 
 CRC32 uses the IEEE polynomial 0xEDB88320 by default and 
 CRC64 uses the ECMA polynomial 0xC96C5795D7870F42
