@@ -43,7 +43,7 @@ impl Crc64 {
         }
     }
 
-    pub fn finalize(&mut self){
+    pub fn finalize(&mut self) {
         self.value = self.value ^ 0xffffffffffffffffu64;
     }
 
@@ -58,7 +58,7 @@ impl Crc64 {
         self.value
     }
 
-    pub fn bytecount(&self) -> u32{
+    pub fn bytecount(&self) -> u32 {
         self.count
     }
 }
@@ -67,5 +67,5 @@ impl Crc64 {
 fn crc32_test() {
     let mut crc64 = Crc64::new();
     crc64.checksum(b"0000");
-    assert_eq!(crc64.getsum(),0x2B5C866A7CBEF446);
+    assert_eq!(crc64.getsum(), 0x2B5C866A7CBEF446);
 }

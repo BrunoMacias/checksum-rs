@@ -4,8 +4,7 @@ use checksum::crc::Crc as crc;
 
 use std::env;
 
-pub fn main() {
-    let filename: &str = &env::args().nth(2).unwrap()[..];
+fn checksum(filename: &str) {
     let mut crc = crc::new(filename);
     match crc.checksum() {
         Ok(checksum) => {
@@ -14,6 +13,19 @@ pub fn main() {
         }
         Err(e) => {
             println!("{}", e);
+        }
+    }
+}
+
+fn main() {
+    let args: Vec<String> = env::args().collect();
+    match args.len() {
+        2 => {
+            let filename = &args[1];
+            checksum(filename);
+        }
+        _ => {
+            println!("Pass filename in command line");
         }
     }
 }

@@ -26,7 +26,7 @@ impl Crc32 {
         let c32 = Crc32 {
             table: table_maker(polynomial),
             value: 0xffffffff,
-            count: 0
+            count: 0,
         };
         c32
     }
@@ -43,7 +43,7 @@ impl Crc32 {
         }
     }
 
-    pub fn finalize(&mut self){
+    pub fn finalize(&mut self) {
         self.value = self.value ^ 0xffffffff;
     }
 
@@ -58,7 +58,7 @@ impl Crc32 {
         self.value
     }
 
-    pub fn bytecount(&self) -> u32{
+    pub fn bytecount(&self) -> u32 {
         self.count
     }
 }
@@ -67,5 +67,5 @@ impl Crc32 {
 fn crc32_test() {
     let mut crc32 = Crc32::new();
     crc32.checksum(b"0000");
-    assert_eq!(crc32.getsum(),0x0C9BC472);
+    assert_eq!(crc32.getsum(), 0x0C9BC472);
 }

@@ -84,6 +84,6 @@ fn crc_test() {
 
     fs::remove_file("foo.txt").unwrap();
 
-    assert_eq!(sums.crc32,0xAC2C5EE1);
-    assert_eq!(sums.crc64,0xD39C35166B57EF79);
+    assert_eq!(sums.crc32, 0xAC2C5EE1);
+    assert_eq!(sums.crc64, 0xD39C35166B57EF79);
 }

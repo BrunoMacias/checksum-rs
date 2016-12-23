@@ -7,7 +7,3 @@ description = "Calculates crc32/crc64 file checksums written in Rust"
 keywords = ["crc", "crc32", "crc64", "file", "checksum"]
 readme = "README.md"
 license = "MIT"
-
-[[bin]]
-name = "checksum"
-path = "examples/checksum.rs"
